@@ -102,6 +102,14 @@ function enviaForm(){
 // on click of one of tabs
 function displayPage() {
   var current = this.parentNode.getAttribute("data-current");
+  console.log(this.id);
+  var id = this.id.split("_")[1];
+
+  if(id===current){
+ 	document.getElementById("tabpage_"+current).removeAttribute('style');
+  	document.getElementById("tabpage_"+current).classList.toggle('hidden');
+  	return;
+  }
   //remove class of activetabheader and hide old contents
   document.getElementById("tab_" + current).removeAttribute("class");
   document.getElementById("tabpage_" + current).style.display="none";
