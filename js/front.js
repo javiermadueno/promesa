@@ -3,11 +3,8 @@ window.onload = function(){
 
 	formulario.onsubmit = compruebaForm;
 
-
-  // get tab container
-  var container = document.getElementById("panel");
     // set current tab
-    var navitem = container.querySelector(".tabs li");
+    var navitem = document.querySelector(".tabs li");
     //store which tab we are on
     var ident = navitem.id.split("_")[1];
     navitem.parentNode.setAttribute("data-current",ident);
@@ -15,13 +12,14 @@ window.onload = function(){
     navitem.setAttribute("class","active");
 
     //hide two tab contents we don't need
-    var pages = container.querySelectorAll(".tabpage");
-    for (var i = 1; i < pages.length; i++) {
-      pages[i].style.display="none";
+    var pages = document.querySelectorAll(".tabpage");
+    for (var i = 0; i < pages.length; i++) {
+      //pages[i].style.display="none";
+      pages[i].classList.add('hidden');
     }
 
     //this adds click event to tabs
-    var tabs = container.querySelectorAll(".tabs li");
+    var tabs = document.querySelectorAll(".tabs li");
     for (var i = 0; i < tabs.length; i++) {
       tabs[i].onclick=displayPage;
     }
@@ -112,11 +110,10 @@ function displayPage() {
   }
   //remove class of activetabheader and hide old contents
   document.getElementById("tab_" + current).removeAttribute("class");
-  document.getElementById("tabpage_" + current).style.display="none";
+  document.getElementById("tabpage_"+current).classList.add('hidden');
 
-  var ident = this.id.split("_")[1];
   //add class of activetabheader to new active tab and show contents
   this.setAttribute("class","active");
-  document.getElementById("tabpage_" + ident).style.display="block";
-  this.parentNode.setAttribute("data-current",ident);
+  document.getElementById("tabpage_" + id).classList.remove("hidden");
+  this.parentNode.setAttribute("data-current",id);
 };

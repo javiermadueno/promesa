@@ -15,20 +15,20 @@ body{
 }
 
 .bg{
-	position:fixed;
-	top:0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	position: absolute;
+	top:10%;
+	right:2%;
+	width: 600px;
+	height: 600px;
 }
 
 .panel{
-	position: absolute;
-	top: 10%;
+	position: relative;	
+	top: 0px;
 	z-index: 1;
 	display: block;
 	
-	padding: 0;
+	margin-bottom: 50px;
 	width: 476px;
 	-webkit-border-radius: 13px;
 	border-radius: 13px;
@@ -36,11 +36,9 @@ body{
 	-webkit-box-shadow: 0 10px 60px rgba(0,0,0,0.5);
 	-moz-box-shadow: 0 10px 60px rgba(0,0,0,0.5);
 	box-shadow: 0 10px 60px rgba(0,0,0,0.5);
-	zoom: 1;
-	/*background: transparent url(../images/bg-white.png) no-repeat 0 0;*/
+
 	-moz-border-radius: 13px;
-	/*height: 375px;*/
-	right: 170px;
+	
 	transition: all 0.5s ease;
 	-webit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
@@ -49,9 +47,12 @@ body{
 ul.tabs{
 	list-style: none;
 	position: relative;
-	top:-54px;
-	z-index:-2;
-	left:-20px;
+	top: 0;
+	left:20px;
+	margin:0;
+	padding:0;
+	height:auto;
+	overflow: hidden;
 }
 ul.tabs li{
 	
@@ -71,6 +72,7 @@ ul.tabs li{
 	background: -ms-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(246,246,246,0.89) 47%, rgba(237,237,237,1) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(246,246,246,0.89) 47%, rgba(237,237,237,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+	cursor:pointer;
 }
 
 li.active{
@@ -94,8 +96,7 @@ ul li a{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	margin:2px;
-	padding:20px;
+	padding:30px;
 	height:100%;
 	-webkit-border-radius: 13px;
 	-moz-border-radius: 13px;
