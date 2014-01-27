@@ -252,3 +252,22 @@ button, input[type="submit"]{
 #tabcontent_2{
 	display:none;
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.bg{
+		right:2%;
+		max-width: 420px;
+	} 
+	.panel{
+		max-width: 420px
+	}
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	.bg{
+		right:0;
+		max-width:500px;
+		
+	}
+}
